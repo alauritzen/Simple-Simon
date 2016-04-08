@@ -1,15 +1,29 @@
-h1 {
-    color: red;
+body {
+    background-color: black;
 }
 
+h1 {
+    color: yellow;
+    opacity: .80;
+}
+
+h2 {
+    font-family: Verdana, Geneva, sans-serif;
+    text-align: center;
+    bottom: 15%;
+    position: relative;
+}
+
+
 .box {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 30%;
     float:left;
-    opacity: .40;
+    opacity: .60;
 }
 
 #box_up {
+    margin-left: 30%;
     background-color: red;
 }
 
@@ -26,10 +40,21 @@ h1 {
     background-color: green;
 }
 
-#box_start {
-    background-color: black;
-    color: white;
+#scorecard {
+    background-color: white;
+    opacity: .35;
+    color: black;
     clear: left;
-    opacity: 1.0;
+    height: auto;
+    width: 90%;
+    display: none;
+}
 
+#box_start {
+    background-color: white;
+    opacity: .35;
+    color: black;
+    clear: left;
+    height: 50px;
+    width: 90%;
 }
