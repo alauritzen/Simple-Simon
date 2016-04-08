@@ -6,6 +6,7 @@ h1 {
     height: 50px;
     width: 50px;
     float:left;
+    opacity: .40;
 }
 
 #box_up {
@@ -29,5 +30,6 @@ h1 {
     background-color: black;
     color: white;
     clear: left;
+    opacity: 1.0;
 
 }
