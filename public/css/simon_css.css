@@ -1,5 +1,6 @@
 body {
-    background-color: black;
+    background-color:black;
+    font-family: "Cabin Condensed", sans-serif;
 }
 
 h1 {
@@ -8,53 +9,91 @@ h1 {
 }
 
 h2 {
-    font-family: Verdana, Geneva, sans-serif;
     text-align: center;
     bottom: 15%;
     position: relative;
 }
 
+h3 {
+    font-family: "Geostar Fill", monospace;
+}
+
+#pitch {
+    height: 400px;
+    /*width: 90%;*/
+}
 
 .box {
-    height: 100px;
-    width: 30%;
+    /*height: 100px;*/
+    /*width: 30%;*/
     float:left;
-    opacity: .60;
+    opacity: .60; 
 }
 
-#box_up {
-    margin-left: 30%;
+.color_buttons {
+    width: 200px;
+    height: 200px;
+    /*border-radius: 50%;*/
+    position: relative;
+}
+
+/*
+.shift {
+    animation-name: spin;
+    animation-duration: 430ms;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+        // or try
+    style: border-top-left-radius: 0%;
+}   
+
+@keyframes spin {
+    0% { transform: rotate (0deg); }
+    100% { transform: rotate (90deg); }
+} */
+
+#box_red {
     background-color: red;
+    /*margin-left: 45%;*/
+    border-top-left-radius: 100%;
 }
 
-#box_left {
+#box_blue {
     background-color: blue;
-    clear: left;
+    /*clear: left;*/
+    /*float: left;*/
+    border-top-right-radius: 100%;
+    /*margin-left:15%;*/
 }
 
-#box_down {
+#box_orange {
     background-color: orange;
+    border-bottom-left-radius: 100%;
+    /*margin-left: 80%;*/
+    clear:left;
 }
 
-#box_right {
+#box_green {
     background-color: green;
+    border-bottom-right-radius: 100%;
+    /*clear: left;*/
+    /*margin-left: 50%;*/
 }
 
 #scorecard {
     background-color: white;
-    opacity: .35;
+    opacity: .55;
     color: black;
-    clear: left;
     height: auto;
-    width: 90%;
+    width: 100%;
     display: none;
+    padding-left: 20px;
 }
 
 #box_start {
     background-color: white;
-    opacity: .35;
+    opacity: .55;
     color: black;
-    clear: left;
-    height: 50px;
-    width: 90%;
+    height: 100px;
+    width: 100%;
 }
