@@ -38,22 +38,13 @@
         }
     }
 
-    // turn off buttons listener with this function
-    // var turnOffInput = function(event) {
-    // event.preventDefault();
-    // }
-
     // function to flash cpu string
     function flashSequence() {
         // whichButton.click(turnOffInput);
         addCpuNumber(); 
-        
         var index = 0;
-
         var max = cpuString.length;
         var interval = 2000;
-
-
         var intervalId = setInterval(function() {
             if (index <= (max-1)) {
                 // cpuString[index].css("opacity", "1.0");
@@ -66,25 +57,14 @@
                 index++;
             }
         }, interval);
-        // userInput();
+        userInput();
     } 
 
-    // function shiftColors() {
-        /*$("#box_red").animate({
-            left: "200px",
-            }, 430);*/
 
-        /*
-        $("#box_red").addClass("shift");
-        console.log("it ran");   
-    };
-
-
-    shiftColors(); */
-
+// $(selector).off("click");
     // listener for user input
     // make it a function so it only runs when computer finishes
-    // function userInput() {
+    function userInput() {
         buttons.forEach(function (whichButton,index, array) {
             whichButton.click(function() {
                 // buttons flash faster for user input
@@ -104,6 +84,7 @@
                     $("#start_text").text("Oops! Game over! Your score was " + score + ". Press here to try again!").css("font-size", "28px");
                     score=0;
                     updateScore();
+                    $("#pitch").css("transform", "rotate(0deg)");
                     // change start text on game over
                 // if input correct and complete string matches, clear user string for next round and run flashSequence again
                 } else if (userString.length == cpuString.length) {
@@ -112,6 +93,19 @@
                     score++;
                     updateScore();                
                     userString = [];
+                    // rotate if score is divisible by 3
+                    if (score % 8 == 0) {
+                        $("#pitch").css("transform", "rotate(360deg)");
+                    } else if (score % 6 == 0) {
+                        $("#pitch").css("transform", "rotate(270deg)");
+                    } else if (score % 4 == 0) {
+                        $("#pitch").css("transform", "rotate(180deg)");
+                    } else if (score % 2 == 0) {
+                        $("#pitch").css("transform", "rotate(90deg)");
+                    };
+                    buttons.forEach(function (whichButton,index, array) {
+                        whichButton.off("click");
+                        }); //new
                     flashSequence();
                 // otherwise input is correct, but string is not complete, so nothing happens yet
                 } else {
@@ -120,11 +114,13 @@
                 }
             });
         });
+    }
     // }
 
     // listener for start button runs flash sequence on start
     $("#box_start").click(function() {
         // scorecard slides down
+        $("#pitch").css("transform", "rotate(0deg)");
         $("#scorecard").slideDown();
         userString = [];
         cpuString = [];
